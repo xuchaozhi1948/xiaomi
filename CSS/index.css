@@ -95,11 +95,35 @@ a{
 	padding-left: 12px;
 }
 .gouwuche{
+	display: block;
 	width: 120px;
 	height: 40px;
 	background: #424242;
 	float: right;
+	position: relative;
 }
+.gouwu{
+	width: 316px;
+	height: 0px;
+	/* border: 1px solid #999; */
+	box-shadow:0px 2px 5px 0px rgba(0,0,0,0.4);
+	background: #fff;
+	position: absolute;
+	top: 40px;
+	right: 0;
+	z-index: 99;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 12px;
+	color: #666;
+	overflow: hidden;
+	transition: 0.5s;
+}
+
+
+
+
 .gouwuche:hover{
 	background: #ffffff;
 }
@@ -132,6 +156,88 @@ a{
 /* 头结束 */
 /* =========================这是分割线============================ */
 /* 导航栏开始 */
+nav{
+	width: 100%;
+	height: 100px;
+	position: relative;
+}
+.xiala-kuan{
+	width: 100%;
+	height:0px;
+	background: #fff;
+	box-shadow: 0 0 0 , 
+  				0 1px 0 rgba(0,0,0,0.1)inset, 
+   				0 -2px 0 rgba(0,0,0,0.1)inset,
+   				0 0 0 ; 
+	position: absolute;
+	top: 98px;
+	left: 0;
+	z-index: 99;
+	overflow: hidden;
+	transition: 0.5s;
+}
+.nav-xiala{
+	width: 100%;
+	height:0px;
+	/* background: #fff;
+	box-shadow: 0 0 0 , 
+	  				0 1px 0 rgba(0,0,0,0.1)inset, 
+	   				0 -2px 0 rgba(0,0,0,0.1)inset,
+	   				0 0 0 ;  */
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	overflow: hidden;
+	/* transition: 0.5s; */
+}
+
+.nav-kbox{
+	width: 1226px;
+	height: 220px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+.nav-kbox li{
+	width: 200px;
+	height: 100%;
+	display: flex;
+	flex-direction:column;
+	justify-content: space-around;
+	align-items: center;
+}
+.xp-wz{
+	width: 70px;
+	height: 20px;
+	font-size: 12px;
+	color: #ff6700;
+	border:  1px solid #ff6700;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.xp-tu img{
+	display: block;
+	width: 150px;
+	height: 110px;
+	padding: 0 25px;
+	border-right: 1px solid #999;
+}
+.xp-mc{
+	display: block;
+	font-size: 12px;
+	color: #333;
+
+}
+.xp-jg{
+	font-size: 14px;
+	color: #ff6700;
+	padding-bottom: 10px;
+}
+.nav-kbox li:last-child .xp-tu img{
+	border: 0;
+}
 .nav{
 	width: 1226px;
 	height: 100px;
@@ -230,10 +336,10 @@ a{
 }
 .nav-center{
 	width: 655px;
-	height: 20px;
+	line-height: 100px;
 	background: #ffffff;
 	float: left;
-	margin-top: 42px;
+	/* margin-top: 42px; */
 	margin-left: 189px;
 }
 .nav-center li{
@@ -244,7 +350,7 @@ a{
 .nav-center li a{
 	color: #333333;
 }
-.nav-center li a:hover{
+.nav-center li:hover a{
 	color: #ff6700;
 }
 
@@ -254,21 +360,24 @@ a{
 .banner{
 	width: 1226px;
 	height: 460px;
-	/* background: pink; */
 	margin: 0 auto;
 	position: relative;
 }
 .banner-box{
 	width: 1226px;
 	height: 460px;
-	/* background: yellow; */
+
 }
 .banner-box li{
 	width: 1226px;
 	height: 460px;
-	/* background: blue; */
 	position: absolute;
 	top:0;
+	opacity: 0;
+	transition: 2s;
+}
+#xianshi{
+	opacity: 1;
 }
 .banner-box li a{
 	display: block;
@@ -278,7 +387,7 @@ a{
 .banner-zuo{
 	width: 41px;
 	height: 69px;
-	background: rgba(0, 0, 0, 0.3);
+	background: rgba(0, 0, 0, 0);
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -286,19 +395,25 @@ a{
 	margin-bottom: auto;
 	left: 234px;
 	font-size: 20px;
-	color: #ffffff;
+	color: #f5f5f5;
 	text-align: center;
 	line-height: 69px;
 	/* 鼠标变手 */
 	cursor: pointer;
+	-moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
 }
 .banner-zuo:hover{
 	background: rgba(0, 0, 0, 0.8);
+	cursor:pointer;
 }
 .banner-you{
 	width: 41px;
 	height: 69px;
-	background: rgba(0, 0, 0, 0.3);
+	background: rgba(0, 0, 0, 0);
 	/* 链接父类 */
 	position: absolute;
 	top: 0;
@@ -307,14 +422,20 @@ a{
 	margin-bottom: auto;
 	right:0;
 	font-size: 20px;
-	color: #ffffff;
+	color: #f5f5f5;
 	text-align: center;
 	line-height: 69px;
 	/* 鼠标变手 */
 	cursor: pointer;
+	-moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
 }
 .banner-you:hover{
 	background: rgba(0, 0, 0, 0.8);
+	cursor:pointer;
 }
 .banner-dian{
 	width: 130px;
@@ -330,6 +451,7 @@ a{
 	float: left;
 	margin-right: 10px;
 	border-radius: 50%;
+	transition: 1s;
 }
 .banner-dian li:last-child{
 	margin-right: 0px;
@@ -349,6 +471,75 @@ a{
 	height: 420px;
 	margin-top: 20px;
 }
+
+
+.cenav-xxklb{
+	width: calc(1126px - 274px);
+	height: 460px;
+	background: #f5f5f5;
+	position: absolute;
+	top: 0;
+	left: 234px;
+	box-shadow: 0 0 0 , 
+  				0 1px 0 rgba(0,0,0,0.1)inset, 
+   				0 -2px 0 rgba(0,0,0,0.1)inset,
+   				0 0 0 ; 
+}
+.cennv222{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap:wrap;
+	align-content:space-around;
+}
+.none{
+	display: none;
+}
+.black{
+	display: block;
+}
+.celb{
+	width: 260px;
+	height: 50px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 8px;
+}
+/* #lb1{
+	display: block;
+} */
+#lb1 img{
+	display: block;
+	width: 40px;
+	height: 40px;
+	margin-top: 0px;
+}
+#lb2{
+	display: block;
+	font-size: 12px;
+	color: #333;
+	margin-left: -30px;
+}
+#lb2:hover{
+	color: #ff6700;
+}
+#lb3{
+	display: block;
+	width: 60px;
+	height: 20px;
+	border: 1px solid #ff6700;
+	font-size: 12px;
+	color: #ff6700;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#lb3:hover{
+	background: #ff6700;
+	color: #fff;
+}
+
 .cenav-box li{
 	width: 234px;
 	height: 42px;
@@ -435,131 +626,131 @@ a{
 /* =========================这是分割线============================ */
 /* 明星单品开始 */
 /* 标题 */
-.biaot{
+.dundong{
 	width: 1226px;
-	height: 84px;
-	background:#ffffff;
-	margin: 0 auto;
-}
-/* 文字左 */
-.zuowz{
-	width: 140px;
-	height: 40px;
+	height: 438px;
 	background: #ffffff;
-	float: left;
-	margin-top: 44px;
+	margin:  20px auto 0;
+
+}
+.gd-lanmu{
+	width: 100%;
+	height: 58px;
+	background:  #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: space-between
+}
+.gd-lanmu h3{
+	display: block;
 	font-size: 20px;
-	color: #333333;
+	font-weight: normal;
+
 }
-/* 按钮右 */
-.youzh{
-	width: 71px;
-	height: 24px;
-	background: #e0e0e0;
-	float: right;
-	margin-top: 50px;
+.gd-lanmu h3 button{
+	padding: 3px 13px;
+	border: 1px solid #e0e0e0;
+	background: #f5f5f5;
+	outline: none;
 }
-/* 左箭头 */
-.zj{
-	width: 34px;
-	height: 22px;
-	/* background: red; */
-	float: left;
-	margin-top: 1px;
-	margin-right: 1px;
-	margin-left: 1px;
+.gd-lanmu button:last-child{
+	color: #ff6700;
 }
-/* 右箭头 */
-.yj{
-	width: 34px;
-	height: 22px;
-	/* background: red; */
-	float: right;
-	margin-top: 1px;
-	margin-right: 1px;
+.gd-neirong{
+	width: 100%;
+	height: 340px;
+	padding-bottom: 40px;
+	overflow: hidden;
+	font-size: 14px;
+	color: #e0e0e0;
+
 }
-.danping{
-	width: 1226px;
+.gd-tuk{
+	width: 2480px;
 	height: 340px;
 	background: #ffffff;
-	/* 水平居中 */
-	margin: 0 auto;
-}
-.one{
-	width: 234px;
-	height: 339px;
-	background: #fafafa;
-	/* 左浮动 */
-	float: left;
-	/* 右间距 */
-	margin-right: 14px;
+	transition: 2s;
 }
 /* 第一个的上边框 */
-.danping .one:first-child{
+.gd-tuk li:first-child{
 	border-top:1px solid #ffac13; 
 }
 /* 第二个的上边框 */
-.danping .one:nth-child(2){
+.gd-tuk li:nth-child(2){
 	border-top:1px solid #83c44e; 
 }
 /* 第三个的上边框 */
-.danping .one:nth-child(3){
+.gd-tuk li:nth-child(3){
 	border-top:1px solid #2196f3; 
 }
 /* 第四个的上边框 */
-.danping .one:nth-child(4){
+.gd-tuk li:nth-child(4){
 	border-top:1px solid #e53935; 
 }
 /* 第五个的上边框且右间距为0 */
-.danping .one:last-child{
-	border-top:1px solid #00c0a5; 
-	margin-right: 0;
+.gd-tuk li:nth-child(5){
+	border-top:1px solid #83c44e; 
 }
-.tu{
+.gd-tuk li:nth-child(6){
+	border-top:1px solid #2196f3; 
+}
+.gd-tuk li:nth-child(7){
+	border-top:1px solid #83c44e; 
+}
+.gd-tuk li:nth-child(8){
+	border-top:1px solid #2196f3; 
+}
+.gd-tuk li:nth-child(9){
+	border-top:1px solid #83c44e; 
+}
+.gd-tuk li:last-child{
+	border-top:1px solid #00c0a5; 
+}
+.gd-tuk li{
+	width: 234px;
+	line-height: 339px;
+	margin-right: 14px;
+	background: #fafafa;
+	float: left;
+	text-align: center;
+	font-size: 100px;
+	color: #fff;
+
+}
+.gd-tttu{
+	display: block;
 	width: 234px;
 	height: 165px;
-	/* background: pink; */
-	margin-top: 37px;
-	/* 转换为块标签 */
-	display: block;
+	padding: 37px 0 29px 0;
 }
-/* 图片格式 */
-.tu .tttu{
+.gd-wzz{
+	/* text-align: center; */
 	display: block;
 	width: 100%;
-	height: 100%;
-}
-.wenzi{
-	width: 234px;
-	height: 80px;
-	background: #fafafa;
-	/* 上间距 */
-	margin-top: 29px;
-}
-.wz1{
-	/* 文字居中 */
-	text-align: center;
-	/* 字体大小 */
+	line-height: 30px;
 	font-size: 12px;
 	color: #212121;
 }
-.wz2{
-	margin-top: 11px;
-	text-align: center;
+.gd-wzz1{
+	/* margin-top: 11px; */
+	/* text-align: center; */
+	display: block;
+	display: block;
+	width: 100%;
+	line-height: 30px;
 	font-size: 12px;
 	color: #b0b0b6;
 }
-.wz3{
-	margin-top: 20px;
-	text-align: center;
+.gd-wzz2{
+	/* margin-top: 20px; */
+	/* text-align: center; */
+	display: block;
+	display: block;
+	width: 100%;
+	line-height: 30px;
 	font-size: 12px;
 	color: #ff6709;
-}
-.xiabian{
-	width: 1226px;
-	height: 40px;
-	background: #ffffff;
-	margin: 0 auto;
+	padding-bottom: 18px;
 }
 /* 明星单品结束  */
 /* =========================这是分割线============================ */
@@ -593,10 +784,11 @@ a{
 .erjidh1 li a{
 	font-size: 16px;
 	color: #424242;
+	padding-bottom: 3px;
 }
 .erjidh1 li a:hover{
 	color: #ff6700;
-	padding-bottom: 3px;
+	
 	border-bottom: 2px solid #ff6700;
 }
 .erjidh1 li:last-child{
@@ -677,6 +869,17 @@ a{
 	height: 614px;
 	background: #f5f5f5;
 	float: right;
+	position: relative;
+}
+.shuliefy{
+	width: 978px;
+	height: 614px;
+	/* background:pink; */
+	float: right;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
 }
 .jdxiaohe{
 	width: 234px;
@@ -887,15 +1090,16 @@ a{
 }
 .erjidh2 li{
 	float: right;
-	padding-left: 31px;
+	margin-left: 31px;
 }
-.erjidh2 li a{
+.abb{
 	font-size: 16px;
 	color: #424242;
+
 }
 .erjidh2 li a:hover{
 	color: #ff6700;
-	padding-bottom: 3px;
+	
 	border-bottom: 2px solid #ff6700;
 }
 .erjidh2 li:last-child{
@@ -923,7 +1127,20 @@ a{
 	height: 614px;
 	background: #f5f5f5;
 	margin: 0 auto;
+	position: relative;
 }
+.zhineng{
+	width: 100%;
+	height: 100%;
+	/* background: pink; */
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+}
+
+
+
 .znyihang{
 	width: 234px;
 	height: 300px;
@@ -1028,10 +1245,10 @@ a{
 .erjidh li a{
 	font-size: 16px;
 	color: #424242;
+	padding-bottom: 3px;
 }
 .erjidh li a:hover{
 	color: #ff6700;
-	padding-bottom: 3px;
 	border-bottom: 2px solid #ff6700;
 }
 .erjidh li:last-child{
@@ -1042,8 +1259,24 @@ a{
 	height: 614px;
 	background: #f5f5f5;
 	margin-top: 40px;
+	position: relative;
+}
+
+.dp-box1{
+	width: 1226px;
+	height: 614px;
+	/* background: pink; */
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* z-index: 99; */
+	opacity: 0;
+}
+.chuxian{
+	opacity: 1;
 }
 .dapei-xiaobox{
+	display: block;
 	width: 234px;
 	height: 300px;
 	background: #ffffff;
@@ -1377,20 +1610,74 @@ a{
 	margin: 0 auto;
 	padding-top: 40px;
 }
+
 .neirong-box{
 	width: 1226px;
 	height: 420px;
 	background: #f5f5f5;
 	margin-top: 40px;
 }
+.neirong-kuan{
+	width: 296px;
+	height: 419px;
+	border-top: 1px solid #ffac13;
+	/* background: pink; */
+	margin-right: 14px;
+	float: left;
+	position: relative;
+	overflow: hidden;
+}
+.neirong-kuan:nth-child(2){
+	border-top: 1px solid #00E5EE;
+}
+.neirong-kuan:nth-child(3){
+	border-top: 1px solid #7FFF00;
+}
+.neirong-kuan:last-child{
+	border-top: 1px solid #EE3B3B;
+}
+.neirong-dian{
+	width: 86px;
+	height: 10px;
+	/* background: red; */
+	position: absolute;
+	left: 105px;
+	bottom: 25px;
+
+
+}
+.neirong-kuan:last-child{
+	margin-right: 0px;
+}
+.neirong-dian li{
+	width: 6px;
+	height: 6px;
+	background:#b0b0b0;
+	float: left;
+	margin-right: 28px;
+	border-radius: 50%;
+	border: 2px solid #ffffff;
+}
+.neirong-dian li:last-child{
+	margin-right: 0px;	
+}
+.neirong-dian li:first-child{
+	background: #ffffff;
+	border: 2px solid #ff7600;
+}
+.neirong-dian li:hover{
+	background: #fff;
+	border: 2px solid #ff7600;
+}
 .neirong-xbox{
 	width: 296px;
 	height: 419px;
 	background: #ffffff;
-	border-top: 1px solid #ffac13;
-	margin-right: 14px;
 	float: left;
-	position: relative;
+	position: absolute;
+	left: 296px;
+	top: 0;
+
 }
 .nrbs-zuo{
 	width: 20px;
@@ -1408,6 +1695,11 @@ a{
 	line-height: 50px;
 	/* 鼠标变手 */
 	cursor: pointer;
+	-moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
 }
 .nrbs-zuo:hover{
 	background: rgba(0, 0, 0, 0.8);
@@ -1429,34 +1721,27 @@ a{
 	line-height: 50px;
 	/* 鼠标变手 */
 	cursor: pointer;
+	-moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
 }
 .nrbs-you:hover{
 	background: rgba(0, 0, 0, 0.8);
 }
-.neirong-xbox:hover .nrbs-zuo{
+.neirong-kuan:hover .nrbs-zuo{
 	background: rgba(0, 0, 0, 0.3);
 	transition: all 1s ease 0.1s;
 }
-.neirong-xbox:hover .nrbs-you{
+.neirong-kuan:hover .nrbs-you{
 	background: rgba(0, 0, 0, 0.3);
 	transition: all 1s ease;
 }
-.neirong-xbox:hover{
+.neirong-kuan:hover{
 	box-shadow: 0px 10px 20px 3px rgba(0, 0, 0, 0.5);
 	transition: all 1s ease 0.1s;
 	transform: translateY(-2px);
-}
-.neirong-xbox:nth-child(2){
-	border-top: 1px solid #83c44e;
-}
-.neirong-xbox:nth-child(3){
-	border-top: 1px solid #e53935;
-}
-.neirong-xbox:last-child{
-	border-top: 1px solid #2196f3;
-}
-.neirong-xbox:last-child{
-	margin-right: 0px;
 }
 .neirong-wz1{
 	font-size: 16px;
@@ -1487,31 +1772,7 @@ a{
 .neirong-tu{
 	margin-top: 16px;
 }
-.neirong-dian{
-	width: 86px;
-	height: 10px;
-	margin: 0 auto;
-}
-.neirong-dian li{
-	width: 6px;
-	height: 6px;
-	background:#b0b0b0;
-	float: left;
-	margin-right: 28px;
-	border-radius: 50%;
-	border: 2px solid #ffffff;
-}
-.neirong-dian li:last-child{
-	margin-right: 0px;	
-}
-.neirong-dian li:first-child{
-	background: #ffffff;
-	border: 2px solid #ff7600;
-}
-.neirong-dian li:hover{
-	background: #ff7600;
-	/* border: 2px solid #ff7600; */
-}
+
 /* 内容结束 */
 /* =========================这是分割线============================ */
 /* 视频开始 */
